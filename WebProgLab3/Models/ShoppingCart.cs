@@ -23,7 +23,7 @@ namespace WebProgLab3.Models
             for (int i = 0; i < products.Count; i++)
             {
                 ProductRow temp = products[i] as ProductRow;
-                if (product.ProductID == temp.product.ProductID)
+                if (product.productID == temp.product.productID)
                 {
                     temp.quantity += quantity;
                     return;
@@ -59,7 +59,7 @@ namespace WebProgLab3.Models
             double sum = 0;
             foreach (ProductRow row in products)
             {
-                sum += row.quantity * row.product.UnitPrice;
+                sum += row.quantity * row.product.unitPrice;
             }
 
             return sum;
