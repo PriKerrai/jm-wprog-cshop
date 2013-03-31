@@ -5,8 +5,10 @@ using System.Web;
 
 namespace WebProgLab3.Models
 {
+
     public class Product
     {
+
         public int ProductID { get; private set; }
         public string ProductName { get; private set; }
         public string ImagePath { get; private set; }
@@ -27,4 +29,5 @@ namespace WebProgLab3.Models
         }
 
     }
+
 }
