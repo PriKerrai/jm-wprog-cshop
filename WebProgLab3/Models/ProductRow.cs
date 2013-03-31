@@ -5,10 +5,12 @@ using System.Web;
 
 namespace WebProgLab3.Models
 {
+
     public class ProductRow
     {
-        public Product product { private set; get; }
-        public int quantity { set; get; }
+
+			public Product product { get; private set; }
+			public int quantity { get; set; }
 
         public ProductRow(Product product, int quantity)
         {
@@ -17,4 +19,5 @@ namespace WebProgLab3.Models
         }
 
     }
+
 }
