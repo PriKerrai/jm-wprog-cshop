@@ -116,12 +116,12 @@ namespace WebProgLab3.Models
         foreach (ProductRow p in rows)
         {
 					SqlCommand cmd = database.CreateCommand();
-					cmd.CommandText = "SELECT InStock FROM JM_Product WHERE ProductId = " + p.product.ProductID;
+					cmd.CommandText = "SELECT InStock FROM JM_Product WHERE ProductId = " + p.product.productID;
 					int inStock = Convert.ToInt32(cmd.ExecuteScalar());
 
 					inStock -= p.quantity;
 
-          cmd.CommandText = "UPDATE JM_Product SET InStock = " + inStock + " WHERE ProductId = " + p.product.ProductID;
+          cmd.CommandText = "UPDATE JM_Product SET InStock = " + inStock + " WHERE ProductId = " + p.product.productID;
           cmd.ExecuteNonQuery();
 				}
 			}
@@ -145,7 +145,7 @@ namespace WebProgLab3.Models
 				foreach (ProductRow r in rows)
 				{
 					cmd = database.CreateCommand();
-          cmd.CommandText = "INSERT INTO OrderRow VALUES (" + orderID + ", " + r.product.ProductID + ", " + r.quantity + ")";
+          cmd.CommandText = "INSERT INTO OrderRow VALUES (" + orderID + ", " + r.product.productID + ", " + r.quantity + ")";
           cmd.ExecuteNonQuery();
         }
       }

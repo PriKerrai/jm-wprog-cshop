@@ -10,44 +10,44 @@ namespace WebProgLab3.Models
     {
         ArrayList allCarts = new ArrayList();
 
-        public void addPurchase(ShoppingCart shoppingCart)
+        public void AddPurchase(ShoppingCart shoppingCart)
         {
             allCarts.Add(shoppingCart);
         }
 
 
         //Returns an array of the most popular products.
-        public ArrayList getPopular()
+        public ArrayList GetPopular()
         {
-            removeOldPurchases();
+            RemoveOldPurchases();
 
-            ArrayList tmp = getAllProductRows();
+            ArrayList tmp = GetAllProductRows();
 
-            return getTop10(tmp);
+            return GetTop10(tmp);
         }
 
         //Loops through all carts and compiles an array where a product only exists once.
-        private ArrayList getAllProductRows()
+        private ArrayList GetAllProductRows()
         {
             ArrayList tmp = new ArrayList();
             foreach (ShoppingCart shoppingCart in allCarts)
             {
                 foreach (ProductRow row in shoppingCart.getAll())
                 {
-                    addIfNotExist(row, tmp);
+                    AddIfNotExist(row, tmp);
                 }
             }
 
             return tmp;
         }
 
-        private void addIfNotExist(ProductRow purchaseRow, ArrayList list)
+        private void AddIfNotExist(ProductRow purchaseRow, ArrayList list)
         {
             if (list.Count > 0)
             {
                 foreach (ProductRow p in list)
                 {
-                    if (p.product.ProductID == purchaseRow.product.ProductID)
+                    if (p.product.productID == purchaseRow.product.productID)
                     {
                         p.quantity += purchaseRow.quantity;
                         return;
@@ -57,7 +57,7 @@ namespace WebProgLab3.Models
             list.Add(purchaseRow);
         }
 
-        private ArrayList getTop10(ArrayList allProducts)
+        private ArrayList GetTop10(ArrayList allProducts)
         {
             ArrayList mostPopular = new ArrayList();
             int tempq = 0;
@@ -86,7 +86,7 @@ namespace WebProgLab3.Models
             return mostPopular;
         }
 
-        private void removeOldPurchases()
+        private void RemoveOldPurchases()
         {
             ShoppingCart c;
             DateTime breakPoint = DateTime.Now.AddHours(-1);
