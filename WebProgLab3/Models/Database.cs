@@ -13,7 +13,7 @@ namespace WebProgLab3.Models
   {
 		
 		private static enum Table {CATEGORY, PRODUCT, ORDER};
-		private SqlConnection database = new SqlConnection("Data Source=idasql-db.hb.se,56077;Initial Catalog=dbtht1204;Persist Security Info=True;User ID=dbtht1204;Password=stass9");
+		private SqlConnection database = new SqlConnection("Data Source=idasql-db.hb.se,56077;Initial Catalog=dbtht1204;Persist Security Info=True;");
 				
 		public ArrayList GetAllProducts()
     {
