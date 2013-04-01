@@ -9,8 +9,8 @@ namespace WebProgLab3.Models
 	public class Category
 	{
 
-		private int id { get; private set; }
-		private string name { get; private set; }
+		public int id { get; private set; }
+		public string name { get; private set; }
 
 		public Category(int id, string name)
 		{
